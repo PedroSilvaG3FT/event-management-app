@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "App name",
-    "short_name": "App name",
-    "description": "App description",
+    "name": "Event Management",
+    "short_name": "Event Management",
+    "description": "Event Management Description",
     "icons": [
         {
             "src": "/icon-128x128.png",
