@@ -1,5 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
+import { rgba } from 'polished'
 
 export const AppFormGroup = styled.div`
     ${tw`w-auto mb-6`}
@@ -13,7 +14,7 @@ export const AppFormGroup = styled.div`
     > textarea {
         ${tw`w-full h-11 block rounded py-1 px-3 border border-solid`}
         text-rendering: optimizeLegibility !important;
-        /* border-color: ${props => props.theme.colors.text}; */
+        background: ${({ theme }) => rgba(theme.colors.bgPrimary, 0.6)};
 
         &:focus {
             ${tw`outline-none border border-solid`}

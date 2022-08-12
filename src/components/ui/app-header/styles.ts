@@ -10,8 +10,6 @@ export const Content = styled(AppContainer)`
     ${tw`rounded-b-[1.2rem] flex justify-center `}
     height: ${props => props.theme.spacing.headerHeight};
     background: ${props => props.theme.colors.bgSecondary};
-    box-shadow: ${({ theme }) =>
-        theme.boxShadow.bottom(theme.colors.bgPrimary)};
 `
 
 export const Nav = styled.nav`

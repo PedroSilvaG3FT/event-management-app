@@ -19,7 +19,9 @@ export default createGlobalStyle`
     ${tw`text-base`}
     background: ${props => props.theme.colors.bgPrimary};
     color: ${props => props.theme.colors.text};
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+
   }
 
   html {
