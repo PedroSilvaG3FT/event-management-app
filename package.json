@@ -39,6 +39,7 @@
         "polished": "^4.2.2",
         "postcss-preset-env": "^7.7.2",
         "react": "18.2.0",
+        "react-calendar": "^3.7.0",
         "react-dom": "18.2.0",
         "react-hook-form": "^7.34.0",
         "react-icons": "^4.4.0",
@@ -53,6 +54,7 @@
     "devDependencies": {
         "@types/node": "18.7.1",
         "@types/react": "18.0.17",
+        "@types/react-calendar": "^3.5.2",
         "@types/react-dom": "18.0.6",
         "eslint": "8.21.0",
         "eslint-config-next": "12.2.4",

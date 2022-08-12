@@ -22,9 +22,9 @@ export const Slot = styled.div`
 `
 
 export const Button = styled(AppButton)`
-    ${tw`mr-auto`}
+    ${tw`mr-auto flex`}
     background: transparent;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.primary};
 `
 
 export const Title = styled.b`

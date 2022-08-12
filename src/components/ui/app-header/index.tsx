@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import { BsChevronCompactLeft } from 'react-icons/bs'
 import { Container, Content, Nav, Button, Title, Slot } from './styles'
 import { AppHeaderInterface } from '@/interfaces/_appHeader.interface'
 
@@ -14,6 +15,7 @@ const AppHeader: React.FC<AppHeaderInterface> = props => {
                     <Slot>
                         {backTo && (
                             <Button onClick={() => router.push(backTo)}>
+                                <BsChevronCompactLeft />
                                 {backToText || 'Voltar'}
                             </Button>
                         )}
