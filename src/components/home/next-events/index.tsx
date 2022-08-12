@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import NextEventCard from './next-event-card'
+import EventCard from '@/components/common/event-card'
 import { BsChevronCompactRight } from 'react-icons/bs'
 import { Container, Title, Content, Link } from './styles'
 
@@ -18,12 +18,12 @@ const NextEvents: React.FC = () => {
             </Title>
 
             <Content>
-                <NextEventCard />
-                <NextEventCard />
-                <NextEventCard />
-                <NextEventCard />
-                <NextEventCard />
-                <NextEventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
+                <EventCard />
             </Content>
         </Container>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import { BsChevronCompactRight } from 'react-icons/bs'
 import { Container, Title, Icon, Content, Subtitle, Badge } from './styles'
 
-const NextEventCard: React.FC = () => {
+const EventCard: React.FC = () => {
     return (
         <Container>
             <Badge>14/08</Badge>
@@ -17,4 +17,4 @@ const NextEventCard: React.FC = () => {
     )
 }
 
-export default NextEventCard
+export default EventCard

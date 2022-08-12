@@ -2,13 +2,8 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 export const Container = styled.article`
-    ${tw`px-3 py-4 mr-4 rounded-lg min-w-[80vw] flex items-center`}
-    scroll-snap-align: center;
+    ${tw`px-3 py-4 rounded-lg min-w-[80vw] flex items-center`}
     background: ${({ theme }) => theme.colors.bgSecondary};
-
-    &:last-of-type {
-        ${tw`mr-0`}
-    }
 `
 
 export const Content = styled.div`

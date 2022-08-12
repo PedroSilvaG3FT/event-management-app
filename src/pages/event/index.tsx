@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Container } from '@/styles/pages/event'
+import React from 'react'
 import AppHead from '@/components/common/app-head'
-import AppCalendar from '@/components/common/app-calendar'
+import { Container } from '@/styles/pages/event'
+import EventCalendar from '@/components/event/event-calendar'
+import EventList from '@/components/event/event-list'
 
 const Event: React.FC = () => {
-    // const [value, onChange] = useState(new Date(2022, 7, 7))
     const events = [
         new Date(2022, 7, 7),
         new Date(2022, 7, 14),
@@ -17,7 +17,8 @@ const Event: React.FC = () => {
             <AppHead title="Eventos" backTo="/home" showHeader />
 
             <Container showHeader>
-                <AppCalendar activeDates={events} />
+                <EventCalendar events={events} />
+                <EventList events={events} />
             </Container>
         </>
     )
