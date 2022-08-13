@@ -11,7 +11,7 @@ const EventList: React.FC<EventListProps> = props => {
 
     return (
         <Container>
-            <Title>Próximos Eventos</Title>
+            <Title>Eventos</Title>
 
             {events.map((event, index) => (
                 <EventCard key={index} />

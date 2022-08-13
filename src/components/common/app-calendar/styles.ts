@@ -44,26 +44,25 @@ export const Container = styled.article`
 
     .react-calendar__tile--active {
         background: ${({ theme }) => theme.colors.bgSecondary} !important;
-
-        > abbr {
-            ${tw`font-bold w-7 h-7 p-2 rounded-full`}
-            border: 1px solid ${({ theme }) => theme.colors.primary};
-        }
+        border: 1px solid ${({ theme }) => theme.colors.primary} !important;
+        ${tw`font-bold rounded-lg`}
     }
 
     .active-day {
-        background: ${({ theme }) => theme.colors.bgSecondary} !important;
+        background: ${({ theme }) => theme.colors.primary} !important;
+        ${tw`font-bold rounded-lg`}
 
         > abbr {
-            ${tw`font-bold w-7 h-7 p-2 rounded-full`}
-            width: 30px !important;
-            background: ${({ theme }) => theme.colors.primary};
             color: ${({ theme }) => theme.colors.bgSecondary} !important;
         }
     }
 
-    .react-calendar__month-view__days__day > abbr {
-        color: ${({ theme }) => theme.colors.white};
+    .react-calendar__month-view__days__day {
+        border: 1px solid ${({ theme }) => theme.colors.bgSecondary};
+
+        > abbr {
+            color: ${({ theme }) => theme.colors.white};
+        }
     }
 
     .react-calendar__month-view__days__day--weekend > abbr {
