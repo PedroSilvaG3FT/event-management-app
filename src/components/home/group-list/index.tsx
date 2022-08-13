@@ -1,7 +1,7 @@
 import React from 'react'
-import GroupCard from './group-card'
 import { useRouter } from 'next/router'
 import { BsChevronCompactRight } from 'react-icons/bs'
+import GroupCard from '@/components/common/group-card'
 import { Container, Title, Content, Link } from './styles'
 
 const GroupList: React.FC = () => {

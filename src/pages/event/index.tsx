@@ -1,8 +1,8 @@
 import React from 'react'
-import AppHead from '@/components/common/app-head'
 import { Container } from '@/styles/pages/event'
-import EventCalendar from '@/components/event/event-calendar'
+import AppHead from '@/components/common/app-head'
 import EventList from '@/components/event/event-list'
+import EventCalendar from '@/components/event/event-calendar'
 
 const Event: React.FC = () => {
     const events = [

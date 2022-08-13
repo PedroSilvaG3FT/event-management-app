@@ -1,11 +1,54 @@
 import React from 'react'
-// import { Container } from './styles';
+import { useRouter } from 'next/router'
+import AppHead from '@/components/common/app-head'
+import GroupCard from '@/components/common/group-card'
+import { AiOutlineUsergroupAdd } from 'react-icons/ai'
+import { Container, Content, Button } from '@/styles/pages/group'
 
 const Group: React.FC = () => {
+    const router = useRouter()
+    const groups = [
+        { name: 'Edificar', imageURL: '' },
+        { name: 'Lídia', imageURL: '' },
+        {
+            name: 'Cordeirinhos',
+            imageURL:
+                'https://i.pinimg.com/736x/d7/73/05/d77305f816c7e2a37dae14b8f32603e5.jpg'
+        },
+        { name: 'Sarça Ardente', imageURL: '' },
+        {
+            name: 'Ministerio de Louvor',
+            imageURL:
+                'https://i.pinimg.com/736x/d7/73/05/d77305f816c7e2a37dae14b8f32603e5.jpg'
+        }
+    ]
+
+    const goToRegister = () => {
+        router.push('/group/register')
+    }
+
     return (
-        <div>
-            <span>Group works</span>
-        </div>
+        <>
+            <AppHead
+                title="Grupos"
+                backTo="/home"
+                showHeader
+                rightSlot={
+                    <Button onClick={goToRegister}>
+                        Novo
+                        <AiOutlineUsergroupAdd />
+                    </Button>
+                }
+            />
+
+            <Container showHeader>
+                <Content>
+                    {groups.map((item, index) => (
+                        <GroupCard group={item} key={index} />
+                    ))}
+                </Content>
+            </Container>
+        </>
     )
 }
 
