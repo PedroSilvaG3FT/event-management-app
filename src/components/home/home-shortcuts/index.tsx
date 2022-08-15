@@ -1,26 +1,31 @@
 import React from 'react'
+import { Container, Title } from './styles'
 import { HiUserGroup } from 'react-icons/hi'
 import { BsCalendarDate } from 'react-icons/bs'
-import { Container, Title, Content, Card, Icon, Text } from './styles'
+import AppShortcutsList from '@/components/common/app-shortcuts-list'
 
 const HomeShortcuts: React.FC = () => {
+    const goTo = (url: string) => {
+        console.log('TO : ', url)
+    }
+
     const shortcuts = [
-        { icon: <BsCalendarDate />, name: 'Novo Evento', route: '' },
-        { icon: <HiUserGroup />, name: 'Novo Grupo', route: '' }
+        {
+            name: 'Novo Evento',
+            icon: <BsCalendarDate />,
+            callback: () => goTo('/event/register')
+        },
+        {
+            name: 'Novo Grupo',
+            icon: <HiUserGroup />,
+            callback: () => goTo('/group/register')
+        }
     ]
 
     return (
         <Container>
             <Title>Atalhos</Title>
-
-            <Content>
-                {shortcuts.map((item, index) => (
-                    <Card key={index}>
-                        <Icon>{item.icon}</Icon>
-                        <Text>{item.name}</Text>
-                    </Card>
-                ))}
-            </Content>
+            <AppShortcutsList items={shortcuts} />
         </Container>
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import AppHead from '@/components/common/app-head'
-import GroupForm from '@/components/group/group-form'
-import MemberGroup from '@/components/group/member-group'
+import GroupForm from '@/components/group/register/group-form'
 import { Container, Footer, Button } from '@/styles/pages/group/register'
+import MemberGroupRegister from '@/components/group/register/member-group-register'
 
 const GroupRegister: React.FC = () => {
     const members = [
@@ -27,7 +27,10 @@ const GroupRegister: React.FC = () => {
 
             <Container showHeader>
                 <GroupForm />
-                <MemberGroup members={members} onAddMember={onAddMember} />
+                <MemberGroupRegister
+                    members={members}
+                    onAddMember={onAddMember}
+                />
             </Container>
 
             <Footer>

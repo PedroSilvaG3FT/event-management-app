@@ -5,12 +5,12 @@ import AppCardTitle from '@/components/common/app-card-title'
 import AppAutocomplete, {
     AutocompleteHandle
 } from '@/components/common/app-autocomplete'
-interface MemberGroupProps {
+interface MemberGroupRegisterProps {
     members: any[]
     onAddMember?: (member: any) => void
 }
 
-const MemberGroup: React.FC<MemberGroupProps> = props => {
+const MemberGroupRegister: React.FC<MemberGroupRegisterProps> = props => {
     const { members, onAddMember } = props
     const autoComplete = useRef<AutocompleteHandle>(null)
 
@@ -68,4 +68,4 @@ const MemberGroup: React.FC<MemberGroupProps> = props => {
     )
 }
 
-export default MemberGroup
+export default MemberGroupRegister
