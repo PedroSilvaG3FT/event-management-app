@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { BsChevronCompactRight } from 'react-icons/bs'
-import GroupCard from '@/components/common/group-card'
 import { Container, Title, Content, Link } from './styles'
+import AppCardTitle from '@/components/common/app-card-title'
 
 const GroupList: React.FC = () => {
     const router = useRouter()
@@ -34,7 +34,11 @@ const GroupList: React.FC = () => {
             </Title>
             <Content>
                 {groups.map((item, index) => (
-                    <GroupCard group={item} key={index} />
+                    <AppCardTitle
+                        key={index}
+                        name={item.name}
+                        imageURL={item.imageURL}
+                    />
                 ))}
             </Content>
         </Container>

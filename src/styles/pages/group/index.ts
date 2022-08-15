@@ -1,6 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
-import { AppButton, AppContainer } from '../css/ts/components'
+import { AppButton, AppContainer } from '../../css/ts/components'
 
 export const Container = styled(AppContainer)``
 

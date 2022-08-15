@@ -1,16 +1,38 @@
 import React from 'react'
-import { Container } from '@/styles/pages/group'
 import AppHead from '@/components/common/app-head'
 import GroupForm from '@/components/group/group-form'
+import MemberGroup from '@/components/group/member-group'
+import { Container, Footer, Button } from '@/styles/pages/group/register'
 
 const GroupRegister: React.FC = () => {
+    const members = [
+        { name: 'Pedro Silva', imageURL: '' },
+        { name: 'Nicolas Juan', imageURL: '' },
+        { name: 'Luan Henrique', imageURL: '' },
+        { name: 'Jeferson Andrade', imageURL: '' },
+        {
+            name: 'Eliudo Junior',
+            imageURL:
+                'https://i.pinimg.com/736x/d7/73/05/d77305f816c7e2a37dae14b8f32603e5.jpg'
+        }
+    ]
+
+    const onAddMember = (member: any) => {
+        members.push(member)
+    }
+
     return (
         <>
-            <AppHead title="Grupos" backTo="/group" showHeader />
+            <AppHead title="Grupo" backTo="/group" showHeader />
 
             <Container showHeader>
                 <GroupForm />
+                <MemberGroup members={members} onAddMember={onAddMember} />
             </Container>
+
+            <Footer>
+                <Button>Salvar </Button>
+            </Footer>
         </>
     )
 }

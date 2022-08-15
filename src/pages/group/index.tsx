@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import AppHead from '@/components/common/app-head'
-import GroupCard from '@/components/common/group-card'
 import { AiOutlineUsergroupAdd } from 'react-icons/ai'
+import AppCardTitle from '@/components/common/app-card-title'
 import { Container, Content, Button } from '@/styles/pages/group'
 
 const Group: React.FC = () => {
@@ -44,7 +44,11 @@ const Group: React.FC = () => {
             <Container showHeader>
                 <Content>
                     {groups.map((item, index) => (
-                        <GroupCard group={item} key={index} />
+                        <AppCardTitle
+                            key={index}
+                            name={item.name}
+                            imageURL={item.imageURL}
+                        />
                     ))}
                 </Content>
             </Container>
