@@ -6,6 +6,12 @@ export const Container = styled.article`
     background: ${({ theme }) => theme.colors.bgSecondary};
 `
 
+export const Icon = styled.i`
+    ${tw`w-16 h-16 text-xl flex items-center justify-center rounded-full`}
+    background: ${({ theme }) => theme.colors.bgPrimary};
+    color: ${({ theme }) => theme.colors.primary};
+`
+
 export const Image = styled.img`
     ${tw`w-16 h-16 rounded-full`}
 `

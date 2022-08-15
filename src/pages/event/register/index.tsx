@@ -6,6 +6,7 @@ import { Container, Content, Title } from '@/styles/pages/event/register'
 
 const EventRegister: React.FC = () => {
     const router = useRouter()
+
     const groups = [
         { name: 'Edificar', imageURL: '' },
         { name: 'Lídia', imageURL: '' },
@@ -22,8 +23,8 @@ const EventRegister: React.FC = () => {
         }
     ]
 
-    const goToRegister = () => {
-        router.push('/group/register')
+    const goToNextStep = (item: any) => {
+        router.push('/event/register/event-type')
     }
 
     return (
@@ -39,6 +40,7 @@ const EventRegister: React.FC = () => {
                             key={index}
                             name={item.name}
                             imageURL={item.imageURL}
+                            onClick={() => goToNextStep(item)}
                         />
                     ))}
                 </Content>

@@ -1,33 +1,37 @@
 import React from 'react'
-import { Container, Title, Content } from './styles'
+import { BsPlusLg } from 'react-icons/bs'
 import AppCardTitle from '@/components/common/app-card-title'
+import { Container, Title, Content, Link, Text } from './styles'
 
-interface GroupMemberProps {
+interface EventRegisterMemberProps {
     members: any[]
 }
 
-const GroupMember: React.FC<GroupMemberProps> = props => {
+const EventRegisterMember: React.FC<EventRegisterMemberProps> = props => {
     const { members } = props
-
-    const goToDetail = () => {
-        console.log('Detalhes dos membros')
-    }
 
     return (
         <Container>
-            <Title>Membros</Title>
+            <Title>
+                Membros
+                <Link>
+                    <BsPlusLg />
+                </Link>
+            </Title>
+
             <Content>
                 {members.map((item, index) => (
                     <AppCardTitle
                         key={index}
                         name={item.name}
-                        onClick={goToDetail}
                         imageURL={item.imageURL}
                     />
                 ))}
+
+                {!members.length && <Text>Adicione os membros do evento</Text>}
             </Content>
         </Container>
     )
 }
 
-export default GroupMember
+export default EventRegisterMember

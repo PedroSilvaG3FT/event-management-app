@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { rgba } from 'polished'
 
 export const AppFormGroup = styled.div`
-    ${tw`w-auto mb-6`}
+    ${tw`w-auto mb-4`}
 
     > label {
         ${tw`block mb-2`}
