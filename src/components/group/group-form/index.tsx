@@ -1,21 +1,35 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as yup from 'yup'
-import { Form, FormGroup, Article, Button, Input, Span } from './styles'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import AppInputImage from '@/components/common/app-input-image'
-
+import {
+    Form,
+    FormGroup,
+    Article,
+    Label,
+    Input,
+    Span,
+    Select,
+    Option
+} from './styles'
 interface IGroupForm {
     name: string
+    groupType: number
 }
 const GroupForm: React.FC = () => {
+    const groupTypes = [
+        { id: 1, name: 'Banda' },
+        { id: 2, name: 'Simples' }
+    ]
+
     const groupForm = yup.object().shape({
-        weight: yup.number().required('Insira o seu peso')
+        name: yup.string().required('Insira o nome do grupo'),
+        groupType: yup.number().required('Insira o tipo do grupo')
     })
 
     const {
         register,
-        setValue,
         handleSubmit,
         formState: { errors }
     } = useForm<IGroupForm>({ resolver: yupResolver(groupForm) })
@@ -34,6 +48,18 @@ const GroupForm: React.FC = () => {
 
                 <AppInputImage />
             </Article>
+
+            <FormGroup>
+                <Label>Tipo do grupo</Label>
+                <Select {...register('groupType')}>
+                    {groupTypes.map((item, index) => (
+                        <Option key={index} value={item.id}>
+                            {item.name}
+                        </Option>
+                    ))}
+                </Select>
+                <Span>{errors.groupType?.message}</Span>
+            </FormGroup>
         </Form>
     )
 }

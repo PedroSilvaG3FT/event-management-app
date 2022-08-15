@@ -4,14 +4,19 @@ import { Container, Image, Text, TitleBadge } from './styles'
 interface AppCardTitleProps {
     name: string
     imageURL?: string
+    onClick?: Function
 }
 
 const AppCardTitle: React.FC<AppCardTitleProps> = props => {
-    const { name, imageURL } = props
+    const { name, imageURL, onClick } = props
     const firstLetter = name.split('')[0]
 
+    const handleClick = () => {
+        if (onClick) onClick()
+    }
+
     return (
-        <Container>
+        <Container onClick={handleClick}>
             {imageURL ? (
                 <Image src={imageURL} alt={name} />
             ) : (

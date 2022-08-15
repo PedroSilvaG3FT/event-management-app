@@ -23,6 +23,10 @@ const GroupList: React.FC = () => {
         }
     ]
 
+    const goToDetail = (item: any) => {
+        router.push('/group/detail')
+    }
+
     return (
         <Container>
             <Title>
@@ -37,6 +41,7 @@ const GroupList: React.FC = () => {
                     <AppCardTitle
                         key={index}
                         name={item.name}
+                        onClick={goToDetail}
                         imageURL={item.imageURL}
                     />
                 ))}
