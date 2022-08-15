@@ -9,7 +9,6 @@ const GroupRegister: React.FC = () => {
             <AppHead title="Grupos" backTo="/group" showHeader />
 
             <Container showHeader>
-                <div>Group Register</div>
                 <GroupForm />
             </Container>
         </>
