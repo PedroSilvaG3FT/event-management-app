@@ -1,27 +1,43 @@
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
-export const Container = styled.article`
-    ${tw`px-3 py-4 rounded-lg min-w-[35vw] flex flex-col items-center`}
+interface IContainerProps {
+    row?: boolean
+}
+export const Container = styled.article<IContainerProps>`
+    ${tw`rounded-lg min-w-[35vw] flex items-center`}
     background: ${({ theme }) => theme.colors.bgSecondary};
+    flex-direction: ${({ row }) => (row ? 'row' : 'column')};
+
+    ${({ row }) => (row ? tw`p-2` : tw`px-3 py-4`)};
+
+    > span,
+    > img,
+    > i {
+        ${({ row }) => (row ? tw`w-12 h-12` : tw`w-16 h-16`)};
+    }
+
+    > p {
+        ${({ row }) => (row ? tw`mt-0 ml-4` : tw`mt-4 `)};
+    }
 `
 
 export const Icon = styled.i`
-    ${tw`w-16 h-16 text-xl flex items-center justify-center rounded-full`}
+    ${tw`text-xl flex items-center justify-center rounded-full`}
     background: ${({ theme }) => theme.colors.bgPrimary};
     color: ${({ theme }) => theme.colors.primary};
 `
 
 export const Image = styled.img`
-    ${tw`w-16 h-16 rounded-full`}
+    ${tw`rounded-full`}
 `
 
 export const Text = styled.p`
-    ${tw`mt-4 font-bold text-center uppercase text-sm`}
+    ${tw`font-bold text-center uppercase text-sm`}
 `
 
 export const TitleBadge = styled.span`
-    ${tw`w-16 h-16 pb-1 font-bold text-[1.4rem] flex items-center justify-center rounded-full`}
+    ${tw`pb-1 font-bold text-[1.4rem] flex items-center justify-center rounded-full`}
     color: ${({ theme }) => theme.colors.bgSecondary};
     background: ${({ theme }) => theme.colors.primary};
 `

@@ -2,14 +2,15 @@ import React from 'react'
 import { Container, Image, Icon, Text, TitleBadge } from './styles'
 
 interface AppCardTitleProps {
-    name: string
     icon?: any
+    name: string
+    row?: boolean
     imageURL?: string
     onClick?: Function
 }
 
 const AppCardTitle: React.FC<AppCardTitleProps> = props => {
-    const { name, icon, imageURL, onClick } = props
+    const { name, icon, row, imageURL, onClick } = props
     const firstLetter = name.split('')[0]
 
     const handleClick = () => {
@@ -23,7 +24,7 @@ const AppCardTitle: React.FC<AppCardTitleProps> = props => {
     }
 
     return (
-        <Container onClick={handleClick}>
+        <Container onClick={handleClick} row={row}>
             {renderCardFigure()}
             <Text>{name}</Text>
         </Container>

@@ -5,16 +5,17 @@ import { Container, Title, Content, Link, Text } from './styles'
 
 interface EventRegisterMusicProps {
     musics: any[]
+    onClickAction?: () => void
 }
 
 const EventRegisterMusic: React.FC<EventRegisterMusicProps> = props => {
-    const { musics } = props
+    const { musics, onClickAction } = props
 
     return (
         <Container>
             <Title>
                 Musicas
-                <Link>
+                <Link onClick={onClickAction}>
                     <BsPlusLg />
                 </Link>
             </Title>

@@ -5,16 +5,17 @@ import { Container, Title, Content, Link, Text } from './styles'
 
 interface EventRegisterMemberProps {
     members: any[]
+    onClickAction?: () => void
 }
 
 const EventRegisterMember: React.FC<EventRegisterMemberProps> = props => {
-    const { members } = props
+    const { members, onClickAction } = props
 
     return (
         <Container>
             <Title>
                 Membros
-                <Link>
+                <Link onClick={onClickAction}>
                     <BsPlusLg />
                 </Link>
             </Title>

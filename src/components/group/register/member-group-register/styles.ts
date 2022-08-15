@@ -11,11 +11,17 @@ export const Title = styled(AppTitle)`
 `
 
 export const Content = styled.article`
-    ${tw`mt-8 grid gap-6 grid-cols-2`}
+    > article {
+        ${tw`mb-3`}
+
+        &:last-of-type {
+            ${tw`mb-0`}
+        }
+    }
 `
 
 export const Row = styled.div`
-    ${tw`flex items-center justify-between`}
+    ${tw`flex items-center justify-between mb-4`}
 
     > div {
         ${tw`w-4/5 mb-0 mr-4`}

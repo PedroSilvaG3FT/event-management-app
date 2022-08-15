@@ -58,6 +58,7 @@ const MemberGroupRegister: React.FC<MemberGroupRegisterProps> = props => {
             <Content>
                 {members.map((item, index) => (
                     <AppCardTitle
+                        row
                         key={index}
                         name={item.name}
                         imageURL={item.imageURL}
