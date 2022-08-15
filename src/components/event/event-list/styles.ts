@@ -13,5 +13,9 @@ export const Container = styled.section`
 `
 
 export const Title = styled(AppTitle)`
-    ${tw`my-8`}
+    ${tw`my-6`}
+`
+
+export const Link = styled.a`
+    color: ${({ theme }) => theme.colors.primary};
 `
