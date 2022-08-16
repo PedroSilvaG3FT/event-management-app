@@ -21,8 +21,12 @@ export const Article = styled.article.attrs(fadeIn.down)`
     }};
 `
 
+export const Image = styled.img`
+    ${tw`w-32`}
+`
+
 export const Title = styled.h1`
-    ${tw`text-xl font-normal`}
+    ${tw`text-xl font-normal relative top-3`}
 `
 
 export const Content = styled(AppContainer).attrs(fadeIn.up)`

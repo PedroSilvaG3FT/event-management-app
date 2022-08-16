@@ -1,12 +1,12 @@
 {
-    "theme_color": "#1A1A2E",
-    "background_color": "#1A1A2E",
+    "theme_color": "#101010",
+    "background_color": "#101010",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Event Management",
-    "short_name": "Event Management",
-    "description": "Event Management Description",
+    "name": "Agendei",
+    "short_name": "Agendei",
+    "description": "Agendei",
     "icons": [
         {
             "src": "/icon-128x128.png",

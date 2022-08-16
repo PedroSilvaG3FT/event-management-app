@@ -1,18 +1,20 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import AppHead from '@/components/common/app-head'
+import Logo from '@/assets/images/logo/dark-logo.png'
 import {
     Form,
     Span,
     Input,
     Label,
     Title,
+    Image,
     Button,
     Content,
     Article,
     FormGroup,
     Container
 } from '@/styles/pages/login'
-import { useRouter } from 'next/router'
 
 const Wellcome: React.FC = () => {
     const router = useRouter()
@@ -24,10 +26,11 @@ const Wellcome: React.FC = () => {
 
     return (
         <>
-            <AppHead title="Hello World" />
+            <AppHead title="Login" />
             <Container>
                 <Article>
-                    <Title>APP TITLE</Title>
+                    <Image src={Logo} alt="AGENDEI" />
+                    <Title>AGENDEI</Title>
                 </Article>
 
                 <Content>
