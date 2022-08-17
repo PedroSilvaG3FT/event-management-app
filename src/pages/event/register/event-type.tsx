@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { FaPeopleCarry } from 'react-icons/fa'
 import { GiGuitarBassHead } from 'react-icons/gi'
 import { AiOutlineSchedule } from 'react-icons/ai'
 import AppHead from '@/components/common/app-head'
 import AppCardTitle from '@/components/common/app-card-title'
-import { Container, Content, Title } from '@/styles/pages/event/register'
+import {
+    Container,
+    Content,
+    Title,
+    Button
+} from '@/styles/pages/event/register'
 
 const EventType: React.FC = () => {
     const router = useRouter()
+    const [eventType, setEventType] = useState<any>(null)
 
     const eventTypes = [
         { id: 1, name: 'Agenda', icon: <AiOutlineSchedule /> },
@@ -16,7 +22,7 @@ const EventType: React.FC = () => {
         { id: 3, name: 'Escala Comum', icon: <FaPeopleCarry /> }
     ]
 
-    const goToNextStep = (item: any) => {
+    const handleNext = (item: any) => {
         router.push('/event/register/detail')
     }
 
@@ -33,11 +39,16 @@ const EventType: React.FC = () => {
                             key={index}
                             name={item.name}
                             icon={item.icon}
-                            onClick={() => goToNextStep(item)}
+                            onClick={() => setEventType(item)}
+                            isActive={item.id === eventType?.id}
                         />
                     ))}
                 </Content>
             </Container>
+
+            <Button onClick={handleNext} disabled={!eventType}>
+                Avançar
+            </Button>
         </>
     )
 }

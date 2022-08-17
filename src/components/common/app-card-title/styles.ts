@@ -3,13 +3,16 @@ import tw from 'twin.macro'
 
 interface IContainerProps {
     row?: boolean
+    isActive?: boolean
 }
 export const Container = styled.article<IContainerProps>`
-    ${tw`rounded-lg min-w-[35vw] flex items-center`}
+    ${tw`rounded-lg min-w-[35vw] flex items-center border border-solid`}
     background: ${({ theme }) => theme.colors.bgSecondary};
     flex-direction: ${({ row }) => (row ? 'row' : 'column')};
 
     ${({ row }) => (row ? tw`p-2` : tw`px-3 py-4`)};
+    border-color: ${({ isActive, theme }) =>
+        isActive ? theme.colors.primary : theme.colors.bgSecondary};
 
     > span,
     > img,

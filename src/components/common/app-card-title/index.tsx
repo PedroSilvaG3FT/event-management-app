@@ -6,11 +6,12 @@ interface AppCardTitleProps {
     name: string
     row?: boolean
     imageURL?: string
+    isActive?: boolean
     onClick?: Function
 }
 
 const AppCardTitle: React.FC<AppCardTitleProps> = props => {
-    const { name, icon, row, imageURL, onClick } = props
+    const { name, icon, row, imageURL, isActive, onClick } = props
     const firstLetter = name.split('')[0]
 
     const handleClick = () => {
@@ -24,7 +25,7 @@ const AppCardTitle: React.FC<AppCardTitleProps> = props => {
     }
 
     return (
-        <Container onClick={handleClick} row={row}>
+        <Container onClick={handleClick} row={row} isActive={isActive}>
             {renderCardFigure()}
             <Text>{name}</Text>
         </Container>

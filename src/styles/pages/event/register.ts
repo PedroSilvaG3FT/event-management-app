@@ -15,8 +15,12 @@ export const Content = styled.div`
 `
 
 export const Button = styled(AppButton)`
-    ${tw`flex items-center bg-transparent`}
-    color: ${({ theme }) => theme.colors.primary};
+    ${tw`h-16 w-full flex items-center fixed bottom-0 flex items-center justify-center rounded-t-xl rounded-b-none`}
+
+    &:disabled {
+        background: ${({ theme }) => theme.colors.bgSecondary};
+        color: ${({ theme }) => theme.colors.primary};
+    }
 
     > svg {
         ${tw`ml-2 text-lg`}

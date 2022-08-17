@@ -40,9 +40,7 @@ const EventDetail: React.FC = () => {
                 />
             </Container>
 
-            <Footer>
-                <Button onClick={handleSave}>Salvar</Button>
-            </Footer>
+            <Button onClick={handleSave}>Salvar</Button>
 
             <EventMemberModal
                 isOpen={isMemberModalOpen}

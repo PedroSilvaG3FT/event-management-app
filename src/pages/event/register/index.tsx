@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import AppHead from '@/components/common/app-head'
 import AppCardTitle from '@/components/common/app-card-title'
-import { Container, Content, Title } from '@/styles/pages/event/register'
+import {
+    Container,
+    Content,
+    Title,
+    Button
+} from '@/styles/pages/event/register'
 
 const EventRegister: React.FC = () => {
     const router = useRouter()
+    const [group, setGroup] = useState<any>(null)
 
     const groups = [
         { name: 'Edificar', imageURL: '' },
@@ -23,7 +29,7 @@ const EventRegister: React.FC = () => {
         }
     ]
 
-    const goToNextStep = (item: any) => {
+    const handleNext = (item: any) => {
         router.push('/event/register/event-type')
     }
 
@@ -40,11 +46,16 @@ const EventRegister: React.FC = () => {
                             key={index}
                             name={item.name}
                             imageURL={item.imageURL}
-                            onClick={() => goToNextStep(item)}
+                            onClick={() => setGroup(item)}
+                            isActive={item.name === group?.name}
                         />
                     ))}
                 </Content>
             </Container>
+
+            <Button onClick={handleNext} disabled={!group}>
+                Avançar
+            </Button>
         </>
     )
 }
